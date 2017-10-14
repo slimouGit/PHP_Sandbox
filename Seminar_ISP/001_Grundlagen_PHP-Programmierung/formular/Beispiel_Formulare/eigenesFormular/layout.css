@@ -1,0 +1,6 @@
+
+label {width: 200px;}
+#feld {width: 500px; background-color: #ddd;}
+#beschriftung {width: 100px; float: left;}
+input {margin-left: 0px;background-color:none;}
+submit {margin-left: 0px;}

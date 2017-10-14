@@ -1,0 +1,22 @@
+label {
+    float: left;
+    width:100px;
+}
+input {
+    /*display: block;*/
+}
+.button {
+    margin: 10px 0px 0px 100px;
+    border-radius: 0px;
+}
+.eingerueckt {
+    margin: 10px 0px 0px 50px;
+}
+.error {
+    margin:10px 0px;
+    color: #ff0000;
+}
+#feld {
+    display: block;
+    margin-bottom: 10px;
+}

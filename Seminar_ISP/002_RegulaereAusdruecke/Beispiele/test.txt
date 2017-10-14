@@ -1,0 +1,5 @@
+Dies ist eine Test-Datei.
+
+Die Leerzeilen sollen entfernt werden.
+
+Ob das wohl geklappt hat?
