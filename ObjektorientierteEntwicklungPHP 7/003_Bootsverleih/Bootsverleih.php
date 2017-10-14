@@ -17,7 +17,7 @@ class Bootsverleih{
         $uhrzeit = date("H:m");
 
         $this->ausleihe[$bootNumer] = array("name" => $name, "start" => $uhrzeit);
-        printf("- Boot #%d eingebucht um %s Uhr von %s<br>", $bootNumer, $uhrzeit, $name);
+        printf("- Boot #%d eingebucht um %s Uhr von $name<br>", $bootNumer, $uhrzeit);
     }
 
     public function bootAbgeben($bootNummer){
@@ -28,7 +28,7 @@ class Bootsverleih{
         $dauer = 2;
         $kosten = $dauer*self::STUNDENSATZ;
 
-        echo "Rückgabe Boot: $bootNummer<br>";
+        echo "Rückgabe<br>";
         echo "- Dauer: $dauer Stunden<br>";
         echo "- Kosten: $kosten Euro";
     }
