@@ -19,7 +19,6 @@ class Boathire
 
     public function lentBoat(){
         $checkInDate = date("h:i");
-
         $name = $this->name;
         $boat = $this->boat;
 
