@@ -22,8 +22,8 @@ include "script/Boathire.php";
     <div>
         <h1>Bootsverleih</h1>
         <form action="?rent=1" method = "post">
-            <input type="text" name="name">
-            <input type="text" name="boat">
+            <input type="text" placeholder="Name" name="name">
+            <input type="text" placeholder="Boot-Nr." name="boat">
             <input type="submit" value="buchen">
         </form>
     </div>
@@ -31,7 +31,7 @@ include "script/Boathire.php";
     <div>
         <h1>Rückgabe</h1>
         <form action="?return=1" method = "post">
-            <input type="text" name="boat">
+            <input type="text" placeholder="Boot-Nr." name="boat">
             <input type="submit" value="zurückgeben">
         </form>
     </div>
@@ -40,28 +40,14 @@ include "script/Boathire.php";
 </html>
 
 <?php
-if(isset($_GET['rent'])) {
-    $name = $_POST['name'];
-    $boat = $_POST['boat'];
-    $loan = new Boathire($name, $boat);
-    $loan->lentBoat();
-}
 
-if(isset($_GET['return'])) {
-    $boat = $_POST['boat'];
-    Boathire::returnBoat($boat);
-}
-
+Boathire::checkFormInput();
 
 ?>
 <div id="rentBoats">
 
     <h2>vermietete Boote:</h2>
     <?php
-$pdo = new PDO('mysql:host=localhost;dbname=bootsverleih;charset=utf8', 'root', '');
-$sql = "SELECT * FROM ausleihe WHERE checkOut like ''";
-foreach ($pdo->query($sql) as $row) {
-    echo "<br>Boot: " . $row['boat'] .  " ausgeliehen von: " . $row['name'] . " um " . $row['checkIn']." Uhr";
-}
+Boathire::printBookedBoats();
 ?>
 </div>
